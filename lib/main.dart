@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_codelab/codelabs/webview/webview_in_flutter.dart';
-import 'package:flutter_codelab/cookbook/animation/page-route-transition/page1.dart';
-import 'package:flutter_codelab/cookbook/animation/physics-animation/physics_card_drag.dart';
+import 'package:flutter_codelab/getX/couter_app/home.dart';
+import 'package:get/get.dart';
 
 void main() {
   // Codelabs: Adding WebView to your Flutter App
@@ -16,5 +15,8 @@ void main() {
   // ));
 
   // Anamate a widget using a physics simulation
-  runApp(const MaterialApp(home: PhysicsCardDragDemo()));
+  // runApp(const MaterialApp(home: PhysicsCardDragDemo()));
+
+  // GetX
+  runApp(const GetMaterialApp(home: Home()));
 }
