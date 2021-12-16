@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_codelab/getX/signin/signin.dart';
+import 'package:flutter_codelab/getX/bottom_navigation/app.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 
 void main() async {
   // Codelabs: Adding WebView to your Flutter App
@@ -19,25 +18,21 @@ void main() async {
   // runApp(const MaterialApp(home: PhysicsCardDragDemo()));
 
   // GetX
-  // Counter App
+  // [Counter App]
   // runApp(const GetMaterialApp(home: Home()));
 
-  // Signin Form
-  await GetStorage.init();
+  // [Signin Form]
+  // await GetStorage.init();
+  // runApp(
+  //   GetMaterialApp(
+  //     home: Signin(),
+  //   ),
+  // );
+
+  // [Bottom Sheets]
   runApp(
     GetMaterialApp(
-      // theme: ThemeData(
-      //   appBarTheme: const AppBarTheme(
-      //     systemOverlayStyle: SystemUiOverlayStyle(
-      //       statusBarBrightness: Brightness.light,
-      //       statusBarIconBrightness: Brightness.light,
-      //       statusBarColor: Colors.black,
-      //       systemNavigationBarColor: Colors.white,
-      //       systemNavigationBarIconBrightness: Brightness.light,
-      //     ),
-      //   ),
-      // ),
-      home: Signin(),
+      home: App(),
     ),
   );
 }
