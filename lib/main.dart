@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_codelab/getX/bottom_navigation/app.dart';
+import 'package:flutter_codelab/getX/bottom_navigation/bottom_sheets.dart';
+import 'package:flutter_codelab/getX/bottom_navigation/pages/home/details.dart';
 import 'package:get/get.dart';
 
 void main() async {
@@ -32,7 +34,23 @@ void main() async {
   // [Bottom Sheets]
   runApp(
     GetMaterialApp(
-      home: App(),
+      // home: App(),
+      initialRoute: '/',
+      getPages: [
+        GetPage(
+          name: '/',
+          page: () => const App(),
+          bindings: [
+            BindingsBuilder(() => {Get.lazyPut(() => NavigationController())}),
+          ],
+        ),
+        GetPage(
+          name: '/details/:id',
+          binding:
+              BindingsBuilder(() => {Get.lazyPut(() => DetailsController())}),
+          page: () => Details(),
+        )
+      ],
     ),
   );
 }

@@ -37,6 +37,7 @@ dependencies:
   webview_flutter: ^3.0.0
   get: ^4.6.1
   get_storage: ^2.0.3
+  carousel_slider: ^4.0.0
 
 dev_dependencies:
   flutter_test:

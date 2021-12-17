@@ -110,16 +110,23 @@ class Home extends StatelessWidget {
               if (index < _homeController.productList.length) {
                 String productName = _homeController.productList[index]['name'];
                 return ListTile(
+                  onTap: () => Get.toNamed(
+                      "/details/${_homeController.productList[index]['id']}"),
                   title: Container(
                     padding: const EdgeInsets.symmetric(
-                        vertical: 5.0, horizontal: 5.0),
+                        vertical: 5.0, horizontal: 0.0),
                     child: Row(
                       children: [
                         Container(
                           margin: const EdgeInsets.symmetric(horizontal: 5.0),
-                          child: Image.asset(
-                            'assets/images/product.jpeg',
-                            height: 100.0,
+                          child: ClipRRect(
+                            borderRadius: const BorderRadius.all(
+                              Radius.circular(5.0),
+                            ),
+                            child: Image.asset(
+                              'assets/images/product.jpeg',
+                              height: 120.0,
+                            ),
                           ),
                         ),
                         Expanded(
@@ -194,7 +201,7 @@ class Home extends StatelessWidget {
                   _homeController.isLoading.value) {
                 return const Center(
                   child: RefreshProgressIndicator(
-                    color: Colors.red,
+                    color: Colors.orange,
                   ),
                 );
               }

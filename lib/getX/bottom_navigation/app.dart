@@ -7,18 +7,18 @@ import 'package:flutter_codelab/getX/bottom_navigation/pages/neighbor.dart';
 import 'package:flutter_codelab/getX/bottom_navigation/pages/place.dart';
 import 'package:get/get.dart';
 
-class App extends StatelessWidget {
-  App({Key? key}) : super(key: key);
+class App extends GetView<NavigationController> {
+  const App({Key? key}) : super(key: key);
 
-  final NavigationController _navigationController =
-      Get.put(NavigationController());
+  // final NavigationController _navigationController =
+  //     Get.put(NavigationController());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Obx(
         () => IndexedStack(
-          index: _navigationController.selectedIndex.value,
+          index: controller.selectedIndex.value,
           children: [
             Home(),
             const Neighbor(),
